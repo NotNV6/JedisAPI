@@ -1,5 +1,5 @@
 # JedisAPI
-A simplistic yet clean Jedis API
+A Jedis API mainly made for Bukkit plugins (can also be used for other things)
 
 # Examples
 Setup the RedisHandler:
