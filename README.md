@@ -3,18 +3,18 @@ A Jedis API mainly made for Bukkit plugins (can also be used for other things)
 
 # Examples
 Setup the RedisHandler:
-```
+```java
 RedisHandler handler = new RedisHandler("localhost" /*ip*/, "" /*password*/, 27017 /*port*/);
 handler.load();
 ```
 
 Send a packet:
-```
+```java
 handler.sendPacket(packet);
 ```
 
 Make a packet (example with lombok in code):
-```
+```java
 public class ExamplePacket extends Packet {
 
 public String string;
