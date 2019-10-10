@@ -70,7 +70,7 @@ private String host;
                             exception.printStackTrace();
                         }
                     }
-                }, "core");
+                }, "example");
             });
         }).start();
 
