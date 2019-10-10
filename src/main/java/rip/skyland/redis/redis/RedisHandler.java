@@ -7,8 +7,6 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPubSub;
 import rip.skyland.redis.redis.packet.Packet;
 
-import javax.swing.*;
-
 public class RedisHandler {
 
     private String host;
