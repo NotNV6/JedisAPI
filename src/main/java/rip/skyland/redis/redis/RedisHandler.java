@@ -58,9 +58,7 @@ public class RedisHandler {
 
                     @Override
                     public void onMessage(String channel, String message) {
-
                         try {
-
                             // Create the packet
                             int index = message.indexOf("||");
                             Object jsonObject = gson.fromJson(message.substring(index + 2), Class.forName(message.substring(0, index)));
@@ -71,13 +69,9 @@ public class RedisHandler {
                         } catch (Exception exception) {
                             exception.printStackTrace();
                         }
-
                     }
-
                 });
-
             });
-
         }).start();
 
     }
