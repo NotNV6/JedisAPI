@@ -20,10 +20,11 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Please fill in your name");
         String programName = new Scanner(System.in).next();
+
         System.out.println();
+
         RedisHandler handler = new RedisHandler(credentials[0], credentials[1], Integer.parseInt(credentials[2]));
         handler.load();
-
         handler.sendPacket(new PacketStartProgram(programName));
     }
 }
