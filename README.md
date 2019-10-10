@@ -5,7 +5,7 @@ A Jedis API mainly made for Bukkit plugins (can also be used for other things)
 Setup the RedisHandler:
 ```java
 RedisHandler handler = new RedisHandler("localhost" /*ip*/, "" /*password*/, 27017 /*port*/);
-handler.load();
+handler.connect();
 ```
 
 Send a packet:
