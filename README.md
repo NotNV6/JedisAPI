@@ -9,12 +9,12 @@ handler.load();
 ```
 
 Send a packet:
-```
+```java
 handler.sendPacket(packet);
 ```
 
 Make a packet (example with lombok in code):
-```
+```java
 public class ExamplePacket extends Packet {
 
 public String string;
