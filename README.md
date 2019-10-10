@@ -13,7 +13,7 @@ Send a packet:
 handler.sendPacket(packet);
 ```
 
-Make a packet (example with lombok in code:
+Make a packet (example with lombok in code):
 ```
 public class ExamplePacket extends Packet {
 
