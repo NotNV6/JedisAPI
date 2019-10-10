@@ -10,7 +10,7 @@ import javax.swing.*;
 
 public class RedisHandler {
 
-    private String host;
+private String host;
     private String password;
     private int port;
 
@@ -70,7 +70,7 @@ public class RedisHandler {
                             exception.printStackTrace();
                         }
                     }
-                });
+                }, "core");
             });
         }).start();
 
@@ -109,6 +109,4 @@ public class RedisHandler {
             jedisPool.returnResource(jedis);
         }
     }
-
-
 }
