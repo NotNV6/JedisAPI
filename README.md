@@ -12,3 +12,27 @@ Send a packet:
 ```
 handler.sendPacket(packet);
 ```
+
+Make a packet (example with lombok in code:
+```
+public class ExamplePacket extends Packet {
+
+public String string;
+
+public ExamplePacket(String string) {
+    this.string = string;
+}
+
+@Override
+public void onReceive() {
+  System.out.println("Received ExamplePacket with data: " + string);
+}
+
+@Override
+public void onSend() {
+
+}
+```
+
+
+A more in-depth example can be found in rip/skyland/redis/example
