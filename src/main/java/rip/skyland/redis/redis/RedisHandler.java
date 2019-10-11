@@ -7,6 +7,7 @@ import redis.clients.jedis.JedisPubSub;
 import rip.skyland.redis.redis.packet.Packet;
 
 import javax.swing.*;
+import java.util.function.Consumer;
 
 public class RedisHandler {
 
@@ -100,12 +101,12 @@ private String host;
     /**
      * sends a packet through redis
      *
-     * @param callback the callback to be executed
+     * @param consumer the callback to be executed
      */
-    private void runCommand(Callback callback) {
+    private void runCommand(Consumer<Jedis> consumer) {
         Jedis jedis = jedisPool.getResource();
         if (jedis != null) {
-            callback.execute(jedis);
+            consumer.accept(jedis);
             jedisPool.returnResource(jedis);
         }
     }
