@@ -23,7 +23,7 @@ public class Main {
 
         System.out.println();
 
-        RedisHandler handler = new RedisHandler(credentials[0], credentials[1], Integer.parseInt(credentials[2]));
+        RedisHandler handler = new RedisHandler(credentials[0], credentials[1], "Redis", Integer.parseInt(credentials[2]));
         handler.load();
         handler.sendPacket(new PacketStartProgram(programName));
     }
