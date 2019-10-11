@@ -28,13 +28,13 @@ private String host;
      * @param password the password address of the redis server.
      * @param port the port of the redis server.
      */
-    public RedisHandler(String host, String password, int port) {
+    public RedisHandler(String host, String password, String channel, int port) {
         this.host = host;
         this.password = password;
         this.port = port;
 
         this.gson = new Gson();
-        this.channel = "example";
+        this.channel = channel;
     }
 
     /**
@@ -71,7 +71,7 @@ private String host;
                             exception.printStackTrace();
                         }
                     }
-                }, "example");
+                }, channel);
             });
         }).start();
 
