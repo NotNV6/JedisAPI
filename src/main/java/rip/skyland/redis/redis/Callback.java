@@ -1,4 +1,4 @@
-package rip.skyland.chat.util;
+package rip.skyland.redis.redis;
 
 import redis.clients.jedis.Jedis;
 
