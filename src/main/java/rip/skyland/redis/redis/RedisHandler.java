@@ -46,15 +46,10 @@ private String host;
         this.jedisPool = new JedisPool(host, port);
         this.jedisPool.getResource().auth(password.isEmpty() ? null : password);
 
-        // Setup thread
-
         new Thread(() -> {
 
             this.runCommand(redis -> {
-
-                // authenticate with the specified credentials
                 redis.auth(this.password.isEmpty() ? null : this.password);
-
                 redis.subscribe(new JedisPubSub() {
 
                     @Override
