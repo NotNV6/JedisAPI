@@ -61,10 +61,10 @@ private String host;
                     public void onMessage(String channel, String message) {
                         try {
                             // Create the packet
-                            int index = message.indexOf("||");
-                            Object jsonObject = gson.fromJson(message.substring(index + 2), Class.forName(message.substring(0, index)));
+                            String[] strings = message.split("||");
+                            Object jsonObject = gson.fromJson(strings[0], Class.forName(strings[1]));
                             Packet packet = (Packet) jsonObject;
-
+                            
                             packet.onReceive();
 
                         } catch (Exception exception) {
