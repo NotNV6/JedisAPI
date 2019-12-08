@@ -81,16 +81,11 @@ private String host;
     public void sendPacket(Packet packet) {
         packet.onSend();
 
-        Thread thread = new Thread(() ->
+        new Thread(() ->
                 runCommand(redis -> {
                     redis.auth(password.isEmpty() ? null : password);
                     redis.publish(channel, packet.getClass().getName() + "||" + gson.toJson(packet));
-                }));
-
-        thread.start();
-        Timer timer = new Timer(2000, arg0 -> thread.stop());
-        timer.setRepeats(false);
-        timer.start();
+        })).start();
     }
 
     /**
